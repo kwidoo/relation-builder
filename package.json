@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore",
+    "lint:js": "eslint . --fix --ignore-path .gitignore",
+    "lint:css": "stylelint '**/*.css' --fix"  ,  
     "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
