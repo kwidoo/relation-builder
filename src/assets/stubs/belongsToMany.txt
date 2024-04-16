@@ -1,0 +1,14 @@
+    /**
+     * Define a belongsToMany relationship with {{relatedModel}}.
+     *
+     * This method returns a many-to-many relationship between the current model
+     * and the {{relatedModel}}.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function {{methodName}}(): BelongsToMany
+    {
+        return $this->belongsToMany({{relatedModel}}::class, '{{pivotTable}}', '{{foreignPivotKey}}', '{{relatedPivotKey}}', '{{parentKey}}', '{{relatedKey}}');
+    }
+
+{{ scopes }}

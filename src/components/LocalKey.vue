@@ -1,5 +1,5 @@
 <template>
-    <v-col cols="12" md="3">
+    <v-col cols="12" :md="md">
         <v-text-field v-model="localKey" :label="label" outlined dense></v-text-field>
     </v-col>
 
@@ -20,6 +20,11 @@ export default defineComponent({
             required: true,
             default: 'id',
         },
+        md: {
+            type: String,
+            required: false,
+            default: '3',
+        },
     },
     emits: ['update:modelValue'],
     setup(props, { emit }) {
@@ -30,7 +35,7 @@ export default defineComponent({
                 localKey.value = props.modelValue;
             }, { immediate: true });
 
-        watch(() => localKey.value, (newValue) => {
+        watch(() => localKey.value, (newValue: string) => {
             emit('update:modelValue', newValue);
         });
 

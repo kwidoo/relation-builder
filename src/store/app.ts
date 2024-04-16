@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', {
   state: () => ({
-    namespace: 'App\\Models', 
+    namespace: 'App\\Models\\', 
   }),
   getters: {
     getNamespace(state) {
@@ -15,7 +15,7 @@ export const useAppStore = defineStore('app', {
       this.namespace = newNamespace;
     },
     resetNamespace() {
-      this.namespace = 'App\\Models'; // Reset to default or another appropriate value
+      this.namespace = 'App\\Models\\'; // Reset to default or another appropriate value
     }
   }
 })

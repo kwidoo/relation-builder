@@ -9,7 +9,7 @@
             <v-btn variant="text" @click="asFile" icon="mdi-cloud-download-outline" />
         </v-col>
       </v-row>
-      <pre><code v-html="code" /></pre>
+      <pre><code v-html="code" class="hljs" /></pre>
     </div>
 </template>
 <script lang="ts">
@@ -39,12 +39,12 @@ export default defineComponent({
     
     const code = computed(() => highlight(props.codeText));
 
-    const copyCode = () => {
+    const copyCode = (): void => {
       copy(props.codeText);
       snackbarVisible.value = true;
     };
 
-    const asFile = () => {
+    const asFile = (): void => {
         const blob = new Blob([props.codeText], { type: 'text/plain;charset=utf-8' });
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
@@ -57,10 +57,11 @@ export default defineComponent({
     return {
         code,
         copied,
-        copyCode,
         snackbarVisible,
+
+        copyCode,
         asFile
-        };
+       };
     },
 });
 </script>

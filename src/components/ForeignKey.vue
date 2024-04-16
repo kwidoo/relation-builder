@@ -1,5 +1,5 @@
 <template>
-    <v-col cols="12" md="3">
+    <v-col cols="12" :md="md">
         <v-text-field v-model="foreignKey" :label="label" outlined dense></v-text-field>
     </v-col>
 </template>
@@ -26,16 +26,21 @@ export default defineComponent({
             required: true,
             default: 'post_id',
         },
+        md: {
+            type: String,
+            required: false,
+            default: '3',
+        },
     },
     emits: ['update:modelValue'],
     setup(props, { emit }) {
         const foreignKey: Ref<string> = ref('post_id');
 
-        const model = computed(() => {
+        const model = computed((): string => {
             return props.modelName ? _.snakeCase(props.modelName) : '';
         })
 
-        const value = computed(() => props.modelValue ? _.snakeCase(props.modelValue) : '')
+        const value = computed((): string => props.modelValue ? _.snakeCase(props.modelValue) : '')
 
         watch(() => props.modelName,
             () => {
@@ -47,7 +52,7 @@ export default defineComponent({
                 foreignKey.value = props.modelValue ? `${value.value}` : '';
             }, { immediate: true });
 
-        watch(() => foreignKey.value, (newValue) => {
+        watch(() => foreignKey.value, (newValue: string) => {
             emit('update:modelValue', newValue);
         });
         return {

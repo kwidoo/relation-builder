@@ -25,7 +25,7 @@ export default defineComponent({
     const selectedRelation = ref<RouteRecordNormalized | null>(null);
     const route = useRoute();
 
-    watch(selectedRelation, (newValue) => {
+    watch(selectedRelation, (newValue: RouteRecordNormalized | null) => {
       if (newValue && newValue.path) {
         emit('update:modelValue', newValue);
       }

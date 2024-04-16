@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts">
+import { Ref } from 'vue';
 import { ref, defineComponent, watch, onMounted } from 'vue';
 
 export default defineComponent({
@@ -21,15 +22,15 @@ export default defineComponent({
   emits: ['update:modelValue'],
 
   setup(props, { emit }) {
-    const namespace = ref('App\\Models\\');
-    const namespaces = ref(['App\\Models\\', 'App\\']);
+    const namespace: Ref<string> = ref('App\\Models\\');
+    const namespaces: Ref<string[]>= ref(['App\\Models\\', 'App\\']);
 
     onMounted(() => {
       namespace.value = props.modelValue;
     });
-    watch(() => namespace.value, (newValue) => {
+    watch(() => namespace.value, (newValue: string) => {
       if (!newValue.endsWith('\\')) {
-        newValue = `${newValue}\\`;
+        newValue = `${newValue}`;
       }
       emit('update:modelValue', newValue);
     });

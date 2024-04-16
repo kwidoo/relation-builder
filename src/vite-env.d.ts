@@ -10,5 +10,3 @@ declare module '*.vue' {
   const component: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
   export default component;
 }
-
-declare module 'lodash'
