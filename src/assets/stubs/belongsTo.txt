@@ -1,0 +1,10 @@
+    /**
+     * Define a belongsTo relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function {{methodName}}(): BelongsTo
+    {
+        return $this->belongsTo({{ownerModel}}::class, '{{foreignKey}}', '{{localKey}}');
+    }
+    {{ scopes }}

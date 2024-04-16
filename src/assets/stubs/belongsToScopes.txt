@@ -1,0 +1,35 @@
+
+    /**
+     * Scope a query to include models by related model ID.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @param  int $id
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeBy{{ownerModel}}Id(Builder $query, $id)
+    {
+        return $query->where('{{foreignKey}}', $id);
+    }
+
+    /**
+     * Scope a query to include models by related model instance.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Model $relatedModel
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeBy{{ownerModel}}(Builder $query, Model $relatedModel)
+    {
+        return $query->where('{{foreignKey}}', $relatedModel->id);
+    }
+
+    /**
+     * Scope a query to only include models where the related model is missing.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scope{{ownerModel}}IsMissing(Builder $query)
+    {
+        return $query->whereNull('{{foreignKey}}');
+    }

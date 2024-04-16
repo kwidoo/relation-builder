@@ -1,0 +1,6 @@
+export {default as ModelInput} from './ModelInput.vue'
+export {default as NamespaceInput} from './NamespaceInput.vue'
+export {default as SelectRelation} from './SelectRelation.vue'
+export {default as LocalKey} from './LocalKey.vue'
+export {default as ForeignKey} from './ForeignKey.vue'
+export {default as CodeComponent} from './CodeComponent.vue'

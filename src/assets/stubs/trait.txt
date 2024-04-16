@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }}Traits;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+
+trait {{ traitName }}
+{
+{{ traitCode }}
+}
