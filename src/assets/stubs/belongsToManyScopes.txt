@@ -3,6 +3,7 @@
      *
      * @param  \Illuminate\Database\Eloquent\Builder $query
      * @param  mixed $ids A single ID or an array of IDs of the related models.
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWith{{relatedModel}}Ids(Builder $query, $ids): Builder

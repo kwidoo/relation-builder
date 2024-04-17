@@ -1,0 +1,20 @@
+    /**
+     * Define a hasManyThrough relationship.
+     *
+     * This method sets up a relationship to access many instances of {{relatedModel}}
+     * through the {{throughModel}}.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function {{methodName}}(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            {{relatedModel}}::class,
+            {{throughModel}}::class,
+            '{{firstKey}}',  
+            '{{secondKey}}',  
+            '{{localKey}}',   
+            '{{throughKey}}',  
+        );
+    }
+{{ scopes }}

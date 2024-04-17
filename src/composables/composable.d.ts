@@ -17,5 +17,8 @@ declare module '@composables' {
         BELONGS_TO_MANY(model: string): string,
         belongsToManyStub(): Promise<string>,
         belongsToManyScopes(): Promise<string>
+        hasManyThroughStub(): Promise<string>,
+        HAS_MANY_THROUGH(model: string): string
+        hasManyThroughScopes(): Promise<string>
     };
 }
