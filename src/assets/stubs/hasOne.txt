@@ -1,0 +1,12 @@
+
+    /**
+     * Define a hasOne relationship with {{relatedModel}}.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function {{methodName}}(): HasOne
+    {
+        return $this->hasOne({{relatedModel}}::class, '{{foreignKey}}', '{{localKey}}');
+    }
+{{scopes}}
+

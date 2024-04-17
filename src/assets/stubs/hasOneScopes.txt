@@ -1,0 +1,14 @@
+
+    /**
+     * Scope a query to only include models where the related {{relatedModel}} matches the given ID.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @param  mixed $id
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWith{{relatedModel}}Id(Builder $query, $id): Builder
+    {
+        return $query->whereHas('{{methodName}}', function ($q) use ($id) {
+            $q->where('id', $id);
+        });
+    }

@@ -1,0 +1,33 @@
+
+    /**
+     * Define a hasOneThrough relationship with {{relatedModel}} through {{throughModel}}.
+     *
+     * This method returns a single related record through an intermediary model.
+     * @return \Illuminate\Database\Eloquent\Relations\HasOneThrough
+     */
+    public function {{methodName}}(): HasOneThrough
+    {
+        return $this->hasOneThrough(
+            {{relatedModel}}::class,
+            {{throughModel}}::class,
+            '{{firstKey}}',   // Foreign key on the through model
+            '{{secondKey}}',  // Foreign key on the final related model
+            '{{localKey}}',   // Local key on the parent model
+            '{{throughKey}}'  // Local key on the through model
+        );
+    }
+
+    /**
+     * Scope a query to only include models where the related {{relatedModel}} matches a certain condition.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @param  mixed $value
+     * @param  string $column
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWith{{relatedModel}}(Builder $query, $value, $column = 'id'): Builder
+    {
+        return $query->whereHas('{{methodName}}', function (Builder $q) use ($value, $column) {
+            $q->where($column, $value);
+        });
+    }
