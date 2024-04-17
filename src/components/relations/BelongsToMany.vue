@@ -3,25 +3,19 @@
     <v-form>
       <v-container fluid class="px-0">
         <v-row justify="space-between">
-          <model-input v-model="ownerModel" label="Related model" md="4"/>
-          <model-input v-model="relatedModel" label="Model" md="4"/>
+          <model-input v-model="ownerModel" label="Related model" md="4" />
+          <model-input v-model="relatedModel" label="Model" md="4" />
         </v-row>
         <v-row justify="center">
-          <local-key v-model="ownerModelLocalKey" label="Local key" md="2"/>
-          <foreign-key v-model="pivotForeignKeyOwner" :modelName="relatedModel" label="Pivot key"  md="2"/>
-          <pivot-table-input v-model="pivotTable" :model-name1="ownerModel" :model-name2="relatedModel" label="Pivot table" md="2"/>
-          <foreign-key v-model="pivotForeignKeyRelated" :modelName="ownerModel" label="Pivot key"  md="2"/>
-          <local-key v-model="relatedModelLocalKey" label="Local key" md="2"/>
+          <local-key v-model="ownerModelLocalKey" label="Local key" md="2" />
+          <foreign-key v-model="pivotForeignKeyOwner" :modelName="relatedModel" label="Pivot key" md="2" />
+          <pivot-table-input v-model="pivotTable" :model-name1="ownerModel" :model-name2="relatedModel"
+            label="Pivot table" md="2" />
+          <foreign-key v-model="pivotForeignKeyRelated" :modelName="ownerModel" label="Pivot key" md="2" />
+          <local-key v-model="relatedModelLocalKey" label="Local key" md="2" />
         </v-row>
 
-        <v-row>
-          <v-col cols="12" md="4">
-            <v-checkbox v-model="asTrait" label="As trait"></v-checkbox>
-          </v-col>
-          <v-col cols="12" md="4">
-            <v-checkbox v-model="withScopes" label="With scopes"></v-checkbox>
-          </v-col>
-        </v-row>
+        <options-bar v-model:asTrait="asTrait" v-model:withScopes="withScopes" md="4" />
       </v-container>
     </v-form>
     <code-component :codeText="output" :filename="filename" />
@@ -32,7 +26,9 @@
 import { debounce, camelCase } from 'lodash';
 import pluralize from 'pluralize';
 import { defineComponent, ref, Ref, onMounted, watch, computed } from 'vue';
-import { ForeignKey, LocalKey, ModelInput, CodeComponent, PivotTableInput } from '@components';
+import {
+  ForeignKey, LocalKey, ModelInput, CodeComponent, PivotTableInput, OptionsBar,
+} from '@components';
 import { useAppStore } from '@/store/app';
 import { useAsTrait, useConstants } from '@composables';
 
@@ -44,6 +40,8 @@ export default defineComponent({
     ModelInput,
     CodeComponent,
     PivotTableInput,
+    OptionsBar,
+
   },
   setup() {
     const appStore = useAppStore();
@@ -122,4 +120,3 @@ export default defineComponent({
   },
 });
 </script>
-

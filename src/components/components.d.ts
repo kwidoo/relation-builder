@@ -13,6 +13,7 @@ declare module '@components' {
     const ForeignKey: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
     const CodeComponent: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
     const PivotTableInput: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
+    const OptionsBar: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
     
-    export { ModelInput, KeyInput, SelectRelation, NamespaceInput, LocalKey, ForeignKey, CodeComponent, PivotTableInput};
+    export { ModelInput, KeyInput, SelectRelation, NamespaceInput, LocalKey, ForeignKey, CodeComponent, PivotTableInput, OptionsBar};
 }

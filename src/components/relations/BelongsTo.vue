@@ -9,14 +9,8 @@
           <model-input v-model="ownerModel" label="Model" />
         </v-row>
 
-        <v-row>
-          <v-col cols="12" md="4">
-            <v-checkbox v-model="asTrait" label="As trait"></v-checkbox>
-          </v-col>
-          <v-col cols="12" md="4">
-            <v-checkbox v-model="withScopes" label="With scopes"></v-checkbox>
-          </v-col>
-        </v-row>
+        <options-bar v-model:asTrait="asTrait" v-model:withScopes="withScopes" md="4"/>
+
       </v-container>
     </v-form>
     <code-component :codeText="output" :filename="filename" />
@@ -26,7 +20,8 @@
 <script lang="ts">
 import { debounce, camelCase } from 'lodash';
 import { defineComponent, ref, Ref, onMounted, watch, computed } from 'vue';
-import { ForeignKey, LocalKey, ModelInput, CodeComponent } from '@components';
+import { ForeignKey, LocalKey, ModelInput, CodeComponent,    OptionsBar,
+ } from '@components';
 import { useAppStore } from '@/store/app';
 import { useAsTrait, useConstants } from '@composables';
 
@@ -38,6 +33,8 @@ export default defineComponent({
     LocalKey,
     ModelInput,
     CodeComponent,
+    OptionsBar,
+
   },
   setup() {
     const appStore = useAppStore();
