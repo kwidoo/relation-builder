@@ -1,0 +1,24 @@
+
+    /**
+     * Scope a query to only include {{relatedModel}}s with the given IDs.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  mixed  $ids  A single ID or an array of IDs.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWith{{relatedModel}}Id(Builder $query, $ids): Builder
+    {
+        return $query->whereIn('{{foreignKey}}', (array) $ids);
+    }
+
+    /**
+     * Scope a query to only include {{relatedModel}}s with the given name.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $name
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWith{{relatedModel}}ByName(Builder $query, string $name): Builder
+    {
+        return $query->where('{{nameColumn}}', $name);
+    }

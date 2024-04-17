@@ -51,31 +51,25 @@ export default defineComponent({
     const namespace = computed(() => appStore.getNamespace);
 
     const generateRelation = async () => {
-      // Reset output at the start of the function call
       output.value = '';
 
-      // Load the initial stub
       const initialStub = await belongsToStub();
-      let finalOutput = initialStub; // Use a local variable to build the final output
+      let finalOutput = initialStub; 
 
-      // Process scopes
       let scopes = await belongsToScopes();
       finalOutput = finalOutput.replace(/{{\s*scopes\s*}}/g, withScopes.value ? scopes : '');
 
-      // Replace placeholders
       finalOutput = finalOutput
         .replace(/{{\s*methodName\s*}}/g, camelCase(ownerModel.value))
         .replace(/{{\s*ownerModel\s*}}/g, ownerModel.value)
         .replace(/{{\s*foreignKey\s*}}/g, localKey.value)
         .replace(/{{\s*localKey\s*}}/g, foreignKey.value);
 
-      // Process trait inclusion
       if (asTrait.value) {
         const { trait } = await useAsTrait();
         finalOutput = trait(namespace.value, BELONGS_TO(ownerModel.value), finalOutput);
       }
 
-      // Set output to the completely processed text
       output.value = finalOutput;
     };
 

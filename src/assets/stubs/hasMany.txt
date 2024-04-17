@@ -1,0 +1,10 @@
+    /**
+     * Define a has-many relationship for the {{relatedModel}}.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function {{methodName}}(): HasMany
+    {
+        return $this->hasMany({{relatedModel}}::class, '{{foreignKey}}', '{{localKey}}');
+    }
+{{scopes}}
