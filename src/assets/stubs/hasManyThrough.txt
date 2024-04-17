@@ -1,5 +1,5 @@
     /**
-     * Define a hasManyThrough relationship.
+     * Define a hasManyThrough relationship with {{relatedModel}} through {{throughModel}}.
      *
      * This method sets up a relationship to access many instances of {{relatedModel}}
      * through the {{throughModel}}.

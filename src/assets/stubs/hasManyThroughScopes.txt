@@ -1,6 +1,6 @@
 
     /**
-     * Scope a query to include countries that have a {{relatedModel}} with a specific ID.
+     * Scope a query to include that have a {{relatedModel}} with a specific ID.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param  mixed $ids A single ID or an array of IDs of the related models. 
@@ -9,7 +9,7 @@
      */
     public function scopeWith{{relatedModel}}Ids($query, $ids)
     {
-        return $query->whereHas({{methodName}}, function ($query) use ($ids) {
+        return $query->whereHas('{{methodName}}', function ($query) use ($ids) {
             $query->whereIn('id', (array) $ids);
         });
     }

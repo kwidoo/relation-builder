@@ -18,6 +18,8 @@ import morphTiManyFile from '@/assets/stubs/morphToMany.txt';
 import morphToManyScopesFile from '@/assets/stubs/morphToManyScopes.txt';
 import morphByManyFile from '@/assets/stubs/morphedByMany.txt';
 import morphedByManyScopesFile from '@/assets/stubs/morphedByManyScopes.txt';
+import hasOneThroughFile from '@/assets/stubs/hasOneThrough.txt';
+import hasOneThroughScopesFile from '@/assets/stubs/hasOneThroughScopes.txt';
 
 
 
@@ -31,6 +33,9 @@ const useConstants = (): {
     HAS_MANY_THROUGH(model: string): string,
     hasManyThroughStub(): Promise<string>,
     hasManyThroughScopes(): Promise<string>
+    HAS_ONE_THROUGH(model: string): string,
+    hasOneThroughStub(): Promise<string>,
+    hasOneThroughScopes(): Promise<string>
     HAS_ONE(model: string): string,
     hasOneStub(): Promise<string>,
     hasOneScopes(): Promise<string>
@@ -174,6 +179,18 @@ const useConstants = (): {
         return await relationResponse.text();
     };
 
+    const HAS_ONE_THROUGH = (model: string): string => `HasOneThrough${model}`;
+
+    const hasOneThroughStub = async () => {
+        const relationResponse = await fetch(hasOneThroughFile);
+        return await relationResponse.text();
+    };
+
+    const hasOneThroughScopes = async () => {
+        const relationResponse = await fetch(hasOneThroughScopesFile);
+        return await relationResponse.text();
+    };
+
 
     return {
         BELONGS_TO,
@@ -206,6 +223,9 @@ const useConstants = (): {
         MORPH_BY_MANY,
         morphedByManyStub,
         morphedByManyScopes,
+        HAS_ONE_THROUGH,
+        hasOneThroughStub,
+        hasOneThroughScopes,
     }
 }
 
