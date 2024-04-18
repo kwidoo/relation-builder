@@ -1,0 +1,25 @@
+    /**
+     * Define a morphTo relationship.
+     *
+     * This method sets up a polymorphic relationship where this model belongs to one of several models.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
+    public function {{methodName}}(): MorphTo
+    {
+        return $this->morphTo();
+    }
+
+    /**
+     * Scope a query to only include models that are related to a specific model type and id.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $modelType The model type of the relation (e.g., 'App\Models\Post').
+     * @param mixed $modelId The primary key of the related model.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithRelatedModel(Builder $query, string $modelType, $modelId): Builder
+    {
+        return $query->where('{{morphTypeColumn}}', $modelType)->where('{{morphIdColumn}}', $modelId);
+    }
+
