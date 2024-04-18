@@ -1,0 +1,16 @@
+
+    /**
+     * Scope a query to only include models that are associated with a specific related model type and id.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $relatedType The class name of the related model.
+     * @param mixed $relatedId The primary key of the related model.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithRelated(Builder $query, string $relatedType, $relatedId): Builder
+    {
+        return $query->whereHas('{{methodName}}', function (Builder $q) use ($relatedType, $relatedId) {
+            $q->where('{{relatedType}}_type', $relatedType)
+              ->where('{{relatedType}}_id', $relatedId);
+        });
+    }

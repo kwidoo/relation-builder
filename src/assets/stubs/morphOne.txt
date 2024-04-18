@@ -1,0 +1,12 @@
+    /**
+     * Define a morphOne relationship.
+     *
+     * This method establishes a one-to-one polymorphic relationship, where this model can have one related model of any type.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function {{methodName}}(): MorphOne
+    {
+        return $this->morphOne({{relatedModel}}::class, '{{relatedType}}');
+    }
+{{scopes}}

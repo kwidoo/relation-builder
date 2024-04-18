@@ -45,9 +45,8 @@ export default defineComponent({
         }, { immediate: true });
 
         watch(() => props.modelName, () => {
-            if (!props.modelValue) {
-                relationType.value = defaultRelationType.value;
-            }
+            relationType.value = defaultRelationType.value;
+            
         }, { immediate: true });
 
         watch(relationType, (newValue) => {
