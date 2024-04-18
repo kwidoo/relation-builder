@@ -1,12 +1,14 @@
-Relationships Builder
+# Relationships Builder
 
-PHP
-    - [x] Eloquent
-    - [ ] Doctrine ORM
+## PHP
 
-Python
-    - [ ] Django
-    - [ ] Other
+- [x] Eloquent
+- [ ] Doctrine ORM
+
+## Python
+
+- [ ] Django
+- [ ] Other
 
 Disclaimer: When building complex apps, I often forget the order of keys in Belongs To Many and Has Many Through relationships. Initially, someone (whom I unfortunately do not know) created a similar app at https://rel.uonick.com/. Unfortunately, it is no longer available, so I rebuilt it and included all possible Eloquent relationships.
 
@@ -38,7 +40,7 @@ Check out the live demo: [Relationships Builder Demo](https://rels.pashkovsky.me
 1. **Clone the Repository**
 
    ```bash
-   git clonekwidoo/relation-builder.git
+   git clone kwidoo/relation-builder.git
    cd relation-builder
    ```
 
@@ -72,7 +74,13 @@ Check out the live demo: [Relationships Builder Demo](https://rels.pashkovsky.me
 - [x] Add docker setup
 
     ```bash
-        docker-compose up -d
+    docker-compose up -d
+    ```
+
+    Access it:
+
+    ```
+    http://localhost:3000
     ```
 
 ## Usage
@@ -92,7 +100,7 @@ You can also select a namespace, if required.
 ## Todo
 
 - [ ] Check syntax of stubs
-- [ ] 
+- [ ] Setup strict eslint
 
 ## Contributing
 
