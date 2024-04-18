@@ -23,6 +23,9 @@ declare module '@composables' {
         HAS_ONE(model: string): string,
         hasOneStub(): Promise<string>,
         hasOneScopes(): Promise<string>
+        HAS_ONE_THROUGH(model: string): string,
+        hasOneThroughStub(): Promise<string>,
+        hasOneThroughScopes(): Promise<string>
         HAS_MANY(model: string): string,
         hasManyStub(): Promise<string>,
         hasManyScopes(): Promise<string>

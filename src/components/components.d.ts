@@ -14,6 +14,7 @@ declare module '@components' {
     const CodeComponent: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
     const PivotTableInput: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
     const OptionsBar: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
+    const MorphTypeInput: DefineComponent<ComponentProps, ComponentEmits, ComponentSlots>;
     
-    export { ModelInput, KeyInput, SelectRelation, NamespaceInput, LocalKey, ForeignKey, CodeComponent, PivotTableInput, OptionsBar};
+    export { ModelInput, KeyInput, SelectRelation, NamespaceInput, LocalKey, ForeignKey, CodeComponent, PivotTableInput, OptionsBar, MorphTypeInput};
 }

@@ -1,11 +1,12 @@
 <template>
     <v-row>
-        <v-col cols="12" :md="md">
-        <v-checkbox v-model="asTraitModel" label="As trait"></v-checkbox>
+        <v-col v-if="asTraitEnabled" cols="12" :md="md">
+            <v-checkbox v-model="asTraitModel" label="As trait" />
         </v-col>
-        <v-col cols="12" :md="md">
-        <v-checkbox v-model="withScopesModel" label="With scopes"></v-checkbox>
+        <v-col v-if="withScopesEnabled" cols="12" :md="md">
+            <v-checkbox v-model="withScopesModel" label="With scopes" />
         </v-col>
+        <slot />
     </v-row>
 </template>
 <script lang="ts">
@@ -21,9 +22,17 @@ export default defineComponent({
             type: Boolean,
             default: false,
         },
+        asTraitEnabled: {
+            type: Boolean,
+            default: true,
+        },
         withScopes: {
             type: Boolean,
             default: false,
+        },
+        withScopesEnabled: {
+            type: Boolean,
+            default: true,
         },
     },
 

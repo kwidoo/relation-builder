@@ -1,0 +1,12 @@
+    /**
+     * Define a morphMany relationship.
+     *
+     * This method sets up a one-to-many polymorphic relationship, allowing this model
+     * to have multiple related models of any type.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function {{methodName}}(): MorphMany
+    {
+        return $this->morphMany({{relatedModel}}::class, '{{relatedType}}');
+    }{{scopes}}
