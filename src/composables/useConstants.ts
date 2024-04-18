@@ -16,7 +16,7 @@ import morphToFile from '@/assets/stubs/morphTo.txt';
 import morphToScopesFile from '@/assets/stubs/morphToScopes.txt';
 import morphTiManyFile from '@/assets/stubs/morphToMany.txt';
 import morphToManyScopesFile from '@/assets/stubs/morphToManyScopes.txt';
-import morphByManyFile from '@/assets/stubs/morphedByMany.txt';
+import morphedByManyFile from '@/assets/stubs/morphedByMany.txt';
 import morphedByManyScopesFile from '@/assets/stubs/morphedByManyScopes.txt';
 import hasOneThroughFile from '@/assets/stubs/hasOneThrough.txt';
 import hasOneThroughScopesFile from '@/assets/stubs/hasOneThroughScopes.txt';
@@ -54,7 +54,7 @@ const useConstants = (): {
     MORPH_TO_MANY(model: string): string,
     morphToManyStub(): Promise<string>,
     morphToManyScopes(): Promise<string>
-    MORPH_BY_MANY(model: string): string,
+    MORPHED_BY_MANY(model: string): string,
     morphedByManyStub(): Promise<string>,
     morphedByManyScopes(): Promise<string>
 } => {
@@ -143,10 +143,10 @@ const useConstants = (): {
         return await relationResponse.text();
     }
 
-    const MORPH_BY_MANY = (model: string): string => `MorphedByMany${model}`;
+    const MORPHED_BY_MANY = (model: string): string => `MorphedByMany${model}`;
 
     const morphedByManyStub = async () => {
-        const relationResponse = await fetch(morphByManyFile);
+        const relationResponse = await fetch(morphedByManyFile);
         return await relationResponse.text();
     };
 
@@ -220,7 +220,7 @@ const useConstants = (): {
         MORPH_TO_MANY,
         morphToManyStub,
         morphToManyScopes,
-        MORPH_BY_MANY,
+        MORPHED_BY_MANY,
         morphedByManyStub,
         morphedByManyScopes,
         HAS_ONE_THROUGH,

@@ -41,7 +41,7 @@ declare module '@composables' {
         MORPH_TO_MANY(model: string): string,
         morphToManyStub(): Promise<string>,
         morphToManyScopes(): Promise<string>
-        MORPH_BY_MANY(model: string): string,
+        MORPHED_BY_MANY(model: string): string,
         morphedByManyStub(): Promise<string>,
         morphedByManyScopes(): Promise<string>
     };

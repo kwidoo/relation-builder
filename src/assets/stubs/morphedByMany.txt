@@ -1,0 +1,16 @@
+    /**
+     * Define a morphedByMany relationship.
+     *
+     * This method sets up the inverse of a many-to-many polymorphic relationship,
+     * allowing this model to be associated with multiple instances of one or more other types.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphedByMany
+     */
+    public function {{methodName}}(): MorphedByMany
+    {
+        return $this->morphedByMany(
+            {{relatedModel}}::class,
+            '{{relatedType}}',
+        );
+    }
+{{scopes}}
