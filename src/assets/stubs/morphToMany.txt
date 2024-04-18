@@ -1,0 +1,16 @@
+    /**
+     * Define a morphToMany relationship.
+     *
+     * This method establishes a many-to-many polymorphic relationship, allowing this model
+     * to associate with multiple instances of multiple types.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    public function {{methodName}}(): MorphToMany
+    {
+        return $this->morphToMany(
+            {{relatedModel}}::class,
+            '{{relatedType}}',
+        );
+    }
+{{scopes}}

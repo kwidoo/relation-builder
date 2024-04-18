@@ -1,0 +1,28 @@
+
+    /**
+     * Scope a query to only include models that are associated with a specific related model type.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $relatedType The class name of the related model.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithRelatedType(Builder $query, string $relatedType): Builder
+    {
+        return $query->whereHas('{{methodName}}', function (Builder $q) use ($relatedType) {
+            $q->where('{{relatedType}}_type', $relatedType);
+        });
+    }
+
+    /**
+     * Scope a query to only include models that are associated with a specific related model ID.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param mixed $relatedId The ID of the related model.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithRelatedId(Builder $query, $relatedId): Builder
+    {
+        return $query->whereHas('{{methodName}}', function (Builder $q) use ($relatedId) {
+            $q->where('{{relatedType}}_id', $relatedId);
+        });
+    }
