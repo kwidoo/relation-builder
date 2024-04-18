@@ -32,7 +32,7 @@ export default defineComponent({
         },
         withScopesEnabled: {
             type: Boolean,
-            default: true,
+            default: false,
         },
     },
 
