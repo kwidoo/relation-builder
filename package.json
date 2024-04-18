@@ -1,6 +1,6 @@
 {
-  "name": "trait-generator",
-  "version": "0.0.0",
+  "name": "relation-builder",
+  "version": "0.9.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
