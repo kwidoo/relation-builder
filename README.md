@@ -8,6 +8,7 @@ Python
     - [ ] Django
     - [ ] Other
 
+Disclaimer: When building complex apps, I often forget the order of keys in Belongs To Many and Has Many Through relationships. Initially, someone (whom I unfortunately do not know) created a similar app at https://rel.uonick.com/. Unfortunately, it is no longer available, so I rebuilt it and included all possible Eloquent relationships.
 
 Relationships Builder designed to facilitate the creation of Eloquent, Doctrine, Django relationships in your applications. 
 
@@ -87,6 +88,11 @@ You can also select a namespace, if required.
 - [ ] Allow saving, editing, and deleting namespaces
 - [ ] Enable the generation of default scopes
 - [ ] Allow the creation of migrations
+
+## Todo
+
+- [ ] Check syntax of stubs
+- [ ] 
 
 ## Contributing
 
