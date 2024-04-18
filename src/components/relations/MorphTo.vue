@@ -31,7 +31,7 @@ export default defineComponent({
   },
   setup() {
     const appStore = useAppStore();
-    const { MORPH_TO, morphToStub, morphToScopes } = useConstants();
+    const { morphToStub, morphToScopes } = useConstants();
     let output = ref('');
 
     const morphId = ref(''); // Identifier for the polymorphic relation

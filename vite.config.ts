@@ -38,4 +38,16 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    manifest: true,
+    minify: true, // Change the value to true
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.log statements
+      },
+    },
+    sourcemap: false, // Disable sourcemap generation
+  },
 })

@@ -25,7 +25,7 @@ Built with Vue 3, Vuetify, and TypeScript, this dynamic web interface provides a
 
 ## Demo
 
-Check out the live demo: [Relationships Builder Demo](https://rels.pashkovsky.me)
+Check out the live demo: [Relationships Builder Demo](https://rel.pashkovsky.me)
 
 ## Requirements
 
